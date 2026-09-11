@@ -1,0 +1,7569 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: #02050c;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 96px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 8%;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+    z-index: 10;
+
+    backdrop-filter: blur(4px);
+}
+
+
+/* LOGO */
+
+.logo {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    letter-spacing: 12px;
+
+    border-bottom: 3px solid white;
+
+    padding-bottom: 2px;
+}
+
+
+/* MENU */
+
+.nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 42px;
+
+    margin-left: auto;
+    margin-right: 50px;
+}
+
+.nav a {
+    position: relative;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    opacity: 0.85;
+
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    opacity: 1;
+}
+
+.nav a.active {
+    opacity: 1;
+}
+
+.nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -17px;
+
+    width: 100%;
+    height: 3px;
+
+    background: #1da1ff;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background-image: url("../imagens/fundo-pc.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+/* ESCURECE A IMAGEM */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.70) 0%,
+            rgba(0, 0, 0, 0.40) 35%,
+            rgba(0, 0, 0, 0.05) 75%
+        );
+
+    z-index: 1;
+}
+
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+
+.home-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 520px;
+
+    margin-left: 8%;
+
+    margin-top: 50px;
+}
+
+
+/* PEQUENO ASTRA */
+
+.hero-label {
+    color: #1da1ff;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 8px;
+
+    margin-bottom: 18px;
+}
+
+
+/* TÍTULO */
+
+.home-content h1 {
+    font-size: clamp(65px, 6vw, 105px);
+
+    line-height: 0.95;
+
+    font-weight: 700;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 30px;
+}
+
+.home-content h1 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+/* DESCRIÇÃO */
+
+.home-description {
+    width: 470px;
+
+    font-size: 19px;
+
+    line-height: 1.55;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    margin-bottom: 28px;
+}
+
+
+/* BOTÃO */
+
+.explore-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 15px 25px;
+
+    border: 2px solid #199cff;
+
+    border-radius: 30px;
+
+    color: white;
+
+    background: rgba(0, 100, 200, 0.18);
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.explore-button span {
+    font-size: 24px;
+}
+
+.explore-button:hover {
+    background: #159cff;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   PARTE INFERIOR
+========================= */
+
+.hero-bottom {
+    position: absolute;
+
+    z-index: 2;
+
+    bottom: 35px;
+
+    left: 8%;
+    right: 8%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+}
+
+
+/* ESQUERDA */
+
+.hero-bottom-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 14px;
+
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.small-icon {
+    font-size: 20px;
+}
+
+
+/* CENTRO */
+
+.hero-bottom-center {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 13px;
+}
+
+.arrow-down {
+    margin-top: 15px;
+
+    color: #42aaff;
+
+    font-size: 25px;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+.footer {
+    padding: 60px 8%;
+
+    background: #02050c;
+
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 25px;
+
+    font-weight: bold;
+
+    letter-spacing: 8px;
+}
+
+.footer p {
+    margin-top: 12px;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.copyright {
+    font-size: 13px;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 100vh;
+
+        background-image: url("../imagens/fundo-celular.jpg");
+
+        background-position: center;
+
+        align-items: center;
+    }
+
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.50),
+                rgba(0, 0, 0, 0.20) 40%,
+                rgba(0, 0, 0, 0.75)
+            );
+    }
+
+
+    .home-content {
+        width: auto;
+
+        margin: 0;
+
+        padding: 0 28px;
+
+        margin-top: 60px;
+    }
+
+
+    .hero-label {
+        font-size: 12px;
+
+        letter-spacing: 5px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .home-content h1 {
+        font-size: 60px;
+
+        letter-spacing: -3px;
+
+        line-height: 0.95;
+
+        margin-bottom: 25px;
+    }
+
+
+    .home-description {
+        width: auto;
+
+        font-size: 16px;
+
+        line-height: 1.5;
+
+        margin-bottom: 25px;
+    }
+
+
+    .explore-button {
+        padding: 13px 20px;
+
+        gap: 20px;
+
+        font-size: 15px;
+    }
+
+
+    .hero-bottom {
+        left: 28px;
+
+        right: 28px;
+
+        bottom: 25px;
+    }
+
+
+    .hero-bottom-center {
+        display: none;
+    }
+
+
+    .hero-bottom-left {
+        font-size: 12px;
+    }
+
+
+    .footer {
+        padding: 40px 20px;
+    }
+
+}
+/* =========================
+   MISSÕES
+========================= */
+
+.missions-hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 8%;
+
+    background-image: url("../imagens/fundo-missoes.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+.missions-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.78) 0%,
+            rgba(0, 0, 0, 0.45) 38%,
+            rgba(0, 0, 0, 0.08) 75%
+        );
+}
+
+.missions-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 650px;
+}
+
+.missions-label,
+.small-label {
+    color: #159cff;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+}
+
+.missions-hero h1 {
+    font-size: clamp(58px, 7vw, 95px);
+
+    line-height: 0.95;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 30px;
+}
+
+.missions-hero h1 span {
+    display: block;
+
+    color: #159cff;
+}
+
+.missions-description {
+    max-width: 520px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+.mission-button {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    border: 1px solid #159cff;
+
+    border-radius: 30px;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.mission-button:hover {
+    background: #159cff;
+}
+
+
+/* MISSÃO PRINCIPAL */
+
+.featured-mission {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    min-height: 700px;
+
+    background: #030711;
+}
+
+.featured-mission-image {
+    position: relative;
+
+    background-image: url("../imagens/apollo11.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    min-height: 600px;
+}
+
+.mission-image-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(0, 0, 0, 0.85)
+        );
+}
+
+.mission-image-text {
+    position: absolute;
+
+    bottom: 40px;
+    left: 40px;
+
+    z-index: 2;
+}
+
+.mission-image-text span {
+    display: block;
+
+    color: #159cff;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+}
+
+.mission-image-text strong {
+    display: block;
+
+    margin-top: 10px;
+
+    font-size: 50px;
+}
+
+.featured-mission-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 80px;
+}
+
+.featured-mission-content h2 {
+    font-size: clamp(45px, 5vw, 70px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+.featured-mission-content h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+.featured-mission-content > p {
+    color: #8f99a8;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+.mission-info {
+    display: flex;
+
+    gap: 50px;
+
+    margin-top: 40px;
+}
+
+.mission-info div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.mission-info span {
+    color: #606b7c;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.mission-info strong {
+    font-size: 15px;
+}
+
+
+/* LISTA */
+
+.missions-history {
+    padding: 110px 8%;
+
+    background: #050911;
+}
+
+.history-heading {
+    margin-bottom: 50px;
+}
+
+.history-heading h2 {
+    font-size: 45px;
+
+    letter-spacing: -2px;
+}
+
+.history-list {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.history-item {
+    display: grid;
+
+    grid-template-columns: 70px 1fr 100px;
+
+    align-items: center;
+
+    min-height: 110px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.history-number {
+    color: #159cff;
+
+    font-size: 12px;
+}
+
+.history-name h3 {
+    font-size: 22px;
+
+    margin-bottom: 7px;
+}
+
+.history-name p {
+    color: #747f90;
+
+    font-size: 13px;
+}
+
+.history-year {
+    text-align: right;
+
+    color: #8c96a5;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 768px) {
+
+    .missions-hero {
+        background-image: url("../imagens/fundo-celular.jpg");
+
+        padding: 110px 7% 70px;
+
+        align-items: flex-end;
+    }
+
+    .missions-hero h1 {
+        font-size: 52px;
+    }
+
+    .featured-mission {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-mission-image {
+        min-height: 450px;
+    }
+
+    .featured-mission-content {
+        padding: 60px 7%;
+    }
+
+    .mission-info {
+        gap: 30px;
+
+        flex-wrap: wrap;
+    }
+
+    .missions-history {
+        padding: 80px 7%;
+    }
+
+    .history-item {
+        grid-template-columns: 45px 1fr 55px;
+
+        gap: 10px;
+    }
+
+    .history-heading h2 {
+        font-size: 35px;
+    }
+}
+
+.featured-mission-image {
+    min-height: 600px;
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.20)
+        ),
+        url("../imagens/apollo11.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* =====================================================
+   NASA
+===================================================== */
+
+.nasa-hero {
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 120px 8%;
+
+    overflow: hidden;
+
+    background-image: url("../imagens/fundo-nasa.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.nasa-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.85) 0%,
+            rgba(0, 0, 0, 0.58) 40%,
+            rgba(0, 0, 0, 0.12) 80%
+        );
+}
+
+
+.nasa-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 680px;
+}
+
+
+.nasa-label {
+    color: #159cff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    line-height: 1.6;
+
+    margin-bottom: 22px;
+}
+
+
+.nasa-hero h1 {
+    font-size: clamp(60px, 7vw, 100px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.nasa-hero h1 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.nasa-description {
+    max-width: 550px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 32px;
+}
+
+
+.nasa-button {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    border: 1px solid #159cff;
+
+    border-radius: 30px;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.nasa-button:hover {
+    background: #159cff;
+}
+
+
+/* =====================================================
+   SOBRE A NASA
+===================================================== */
+
+.nasa-about {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    padding: 120px 8%;
+
+    background: #030711;
+}
+
+
+.nasa-about-title h2 {
+    max-width: 600px;
+
+    font-size: clamp(42px, 5vw, 65px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+
+.nasa-about-text {
+    max-width: 600px;
+}
+
+
+.nasa-about-text p {
+    color: #8f99a8;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 22px;
+}
+
+
+/* =====================================================
+   NÚMEROS NASA
+===================================================== */
+
+.nasa-numbers {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: #050911;
+}
+
+
+.nasa-stat {
+    padding: 70px 8%;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.nasa-stat:last-child {
+    border-right: none;
+}
+
+
+.nasa-stat-number {
+    display: block;
+
+    color: #159cff;
+
+    font-size: clamp(45px, 5vw, 70px);
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+
+.nasa-stat p {
+    color: #8791a1;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   PROGRAMAS
+===================================================== */
+
+.nasa-programs {
+    padding: 120px 8%;
+
+    background: #030711;
+}
+
+
+.nasa-programs-heading {
+    max-width: 800px;
+
+    margin-bottom: 60px;
+}
+
+
+.nasa-programs-heading h2 {
+    font-size: clamp(40px, 5vw, 60px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+
+.nasa-program-list {
+    max-width: 1100px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.nasa-program {
+    display: grid;
+
+    grid-template-columns: 80px 1fr;
+
+    gap: 30px;
+
+    padding: 32px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    transition: 0.3s;
+}
+
+
+.nasa-program:hover {
+    padding-left: 12px;
+}
+
+
+.nasa-program > span {
+    color: #159cff;
+
+    font-size: 12px;
+}
+
+
+.nasa-program h3 {
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+
+.nasa-program p {
+    max-width: 650px;
+
+    color: #7f8999;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   TECNOLOGIA
+===================================================== */
+
+.nasa-tech {
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 100px 8%;
+
+    background:
+        radial-gradient(
+            circle at 70% 50%,
+            rgba(21, 156, 255, 0.15),
+            transparent 35%
+        ),
+        #050911;
+}
+
+
+.nasa-tech-content {
+    max-width: 750px;
+}
+
+
+.nasa-tech h2 {
+    font-size: clamp(45px, 6vw, 75px);
+
+    letter-spacing: -4px;
+
+    margin-bottom: 25px;
+}
+
+
+.nasa-tech p:last-child {
+    max-width: 600px;
+
+    color: #8f99a8;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =====================================================
+   CURIOSIDADES
+===================================================== */
+
+.nasa-facts {
+    padding: 120px 8%;
+
+    background: #030711;
+}
+
+
+.nasa-facts-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.nasa-facts-grid article {
+    min-height: 280px;
+
+    padding: 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(255, 255, 255, 0.02);
+
+    transition: 0.3s;
+}
+
+
+.nasa-facts-grid article:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(21, 156, 255, 0.45);
+}
+
+
+.nasa-facts-grid article > span {
+    color: #159cff;
+
+    font-size: 11px;
+}
+
+
+.nasa-facts-grid h3 {
+    font-size: 23px;
+
+    margin: 35px 0 15px;
+}
+
+
+.nasa-facts-grid p {
+    color: #7f8999;
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   NASA - CELULAR
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .nasa-hero {
+        padding: 110px 7% 70px;
+
+        align-items: flex-end;
+
+        background-position: center;
+    }
+
+
+    .nasa-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(0, 0, 0, 0.15) 0%,
+                rgba(0, 0, 0, 0.30) 40%,
+                rgba(0, 0, 0, 0.90) 82%
+            );
+    }
+
+
+    .nasa-hero h1 {
+        font-size: 52px;
+
+        letter-spacing: -3px;
+    }
+
+
+    .nasa-description {
+        font-size: 15px;
+    }
+
+
+    .nasa-about {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding: 80px 7%;
+    }
+
+
+    .nasa-about-title h2 {
+        font-size: 40px;
+    }
+
+
+    .nasa-numbers {
+        grid-template-columns: 1fr;
+    }
+
+
+    .nasa-stat {
+        padding: 45px 7%;
+
+        border-right: none;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+
+    .nasa-programs {
+        padding: 80px 7%;
+    }
+
+
+    .nasa-program {
+        grid-template-columns: 45px 1fr;
+
+        gap: 15px;
+    }
+
+
+    .nasa-tech {
+        padding: 80px 7%;
+
+        min-height: 400px;
+    }
+
+
+    .nasa-tech h2 {
+        font-size: 44px;
+    }
+
+
+    .nasa-facts {
+        padding: 80px 7%;
+    }
+
+
+    .nasa-facts-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =====================================================
+   NASA - HISTÓRIA E DESCOBERTAS
+===================================================== */
+
+.nasa-story {
+    min-height: 720px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    background: #050505;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.nasa-story-reverse .nasa-story-image {
+    order: 2;
+}
+
+.nasa-story-reverse .nasa-story-content {
+    order: 1;
+}
+
+
+.nasa-story-image {
+    min-height: 650px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.historia-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.15),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("../imagens/fundo-historia.jpg");
+}
+
+
+.apollo-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.12),
+            rgba(0, 0, 0, 0.4)
+        ),
+        url("../imagens/fundo-apollo.jpg");
+}
+
+
+.hubble-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../imagens/fundo-hubble.jpg");
+}
+
+
+.plutao-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../imagens/fundo-plutao.jpg");
+}
+
+
+.orion-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.12),
+            rgba(0, 0, 0, 0.4)
+        ),
+        url("../imagens/fundo-orion.jpg");
+}
+
+
+.nasa-story-content {
+    padding: 100px 10%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.nasa-story-content h2 {
+    max-width: 600px;
+
+    font-size: clamp(42px, 5vw, 72px);
+    line-height: 1;
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+
+.nasa-story-content h2 span {
+    display: block;
+    color: #159cff;
+}
+
+
+.nasa-story-content > p:not(.small-label) {
+    max-width: 600px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+
+
+.nasa-big-number {
+    color: #159cff;
+
+    font-size: clamp(70px, 8vw, 125px);
+    font-weight: 800;
+    line-height: 0.9;
+
+    letter-spacing: -6px;
+
+    margin: 10px 0 30px;
+}
+
+
+
+.nasa-highlight {
+    max-width: 560px;
+
+    margin-top: 25px;
+    padding: 20px 24px;
+
+    border-left: 2px solid #159cff;
+
+    background: rgba(21, 156, 255, 0.06);
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+
+.nasa-mini-timeline {
+    display: flex;
+    gap: 40px;
+
+    margin-top: 35px;
+}
+
+
+.nasa-mini-timeline div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.nasa-mini-timeline span {
+    color: #159cff;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+
+.nasa-mini-timeline strong {
+    font-size: 17px;
+}
+
+
+
+.nasa-discovery-list {
+    margin-top: 30px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+.nasa-discovery-list div {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+.nasa-discovery-list span {
+    color: #159cff;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+
+.nasa-discovery-list p {
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 15px;
+
+    margin: 0;
+}
+
+
+
+.nasa-quote-section {
+    min-height: 600px;
+
+    padding: 120px 8%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: #080808;
+}
+
+
+.nasa-quote-section h2 {
+    max-width: 900px;
+
+    font-size: clamp(52px, 7vw, 100px);
+    line-height: 0.95;
+    letter-spacing: -5px;
+
+    margin-bottom: 35px;
+}
+
+
+.nasa-quote-section h2 span {
+    color: #159cff;
+}
+
+
+.nasa-quote-section > p:not(.small-label) {
+    max-width: 760px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+
+.nasa-quote-line {
+    width: 1px;
+    height: 60px;
+
+    background: #159cff;
+
+    margin: 40px 0 25px;
+}
+
+
+.nasa-quote-section > span {
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+
+
+.nasa-space-image {
+    min-height: 720px;
+
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 100px 8%;
+
+    background-image: url("../imagens/fundo-telescopio.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.nasa-space-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.85)
+        );
+}
+
+
+.nasa-space-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 850px;
+}
+
+
+.nasa-space-content h2 {
+    font-size: clamp(50px, 6vw, 90px);
+    line-height: 0.95;
+    letter-spacing: -4px;
+
+    margin-bottom: 25px;
+}
+
+
+.nasa-space-content h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.nasa-space-content > p:not(.small-label) {
+    max-width: 650px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+
+.nasa-compact-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    padding: 120px 8%;
+
+    background: #080808;
+}
+
+
+.nasa-compact-section h2 {
+    max-width: 580px;
+
+    font-size: clamp(48px, 5vw, 75px);
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+
+.nasa-compact-section h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.nasa-compact-section > div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.nasa-compact-section > div:last-child p {
+    max-width: 580px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+
+
+.nasa-exploration {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 100px 8%;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(21, 156, 255, 0.15),
+            transparent 35%
+        ),
+        #030303;
+}
+
+
+.nasa-exploration-content {
+    max-width: 800px;
+}
+
+
+.nasa-exploration h2 {
+    font-size: clamp(55px, 7vw, 100px);
+    line-height: 0.95;
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.nasa-exploration h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.nasa-exploration-content > p:not(.small-label) {
+    max-width: 650px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+
+
+.nasa-ending {
+    min-height: 700px;
+
+    padding: 120px 8%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(21, 156, 255, 0.12),
+            transparent 40%
+        ),
+        #050505;
+}
+
+
+.nasa-ending h2 {
+    max-width: 900px;
+
+    font-size: clamp(55px, 7vw, 100px);
+    line-height: 0.95;
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.nasa-ending h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.nasa-ending > p:not(.small-label) {
+    max-width: 720px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.8;
+
+    font-size: 16px;
+
+    margin-bottom: 35px;
+}
+
+
+
+/* =====================================================
+   NASA RESPONSIVO
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .nasa-story {
+        grid-template-columns: 1fr;
+    }
+
+    .nasa-story-reverse .nasa-story-image,
+    .nasa-story-reverse .nasa-story-content {
+        order: initial;
+    }
+
+    .nasa-story-image {
+        min-height: 500px;
+    }
+
+    .nasa-story-content {
+        padding: 80px 8%;
+    }
+
+    .nasa-compact-section {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 90px 8%;
+    }
+
+}
+
+
+
+@media (max-width: 600px) {
+
+    .nasa-story-image {
+        min-height: 420px;
+    }
+
+    .nasa-story-content {
+        padding: 70px 7%;
+    }
+
+    .nasa-story-content h2 {
+        letter-spacing: -2px;
+    }
+
+    .nasa-big-number {
+        letter-spacing: -4px;
+    }
+
+    .nasa-mini-timeline {
+        gap: 25px;
+
+        flex-wrap: wrap;
+    }
+
+    .nasa-quote-section {
+        padding: 90px 7%;
+    }
+
+    .nasa-quote-section h2,
+    .nasa-space-content h2,
+    .nasa-exploration h2,
+    .nasa-ending h2 {
+        letter-spacing: -3px;
+    }
+
+    .nasa-space-image {
+        min-height: 620px;
+
+        padding: 80px 7%;
+    }
+
+    .nasa-compact-section {
+        padding: 80px 7%;
+    }
+
+    .nasa-exploration {
+        min-height: 600px;
+
+        padding: 90px 7%;
+    }
+
+    .nasa-ending {
+        min-height: 620px;
+
+        padding: 90px 7%;
+    }
+
+}
+
+/* =====================================================
+   MISSÕES - NOVA PÁGINA
+===================================================== */
+
+.missions-page-hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 130px 8% 100px;
+
+    overflow: hidden;
+
+    background-image: url("../imagens/fundo-missoes.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.missions-page-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.94) 0%,
+            rgba(0, 0, 0, 0.68) 42%,
+            rgba(0, 0, 0, 0.15) 78%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.55)
+        );
+}
+
+
+.missions-page-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 900px;
+}
+
+
+.missions-page-label {
+    color: #159cff;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+}
+
+
+.missions-page-content h1 {
+    max-width: 950px;
+
+    font-size: clamp(55px, 7vw, 105px);
+    line-height: 0.94;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 32px;
+}
+
+
+.missions-page-content h1 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.missions-page-content > p:not(.missions-page-label) {
+    max-width: 650px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 17px;
+    line-height: 1.75;
+
+    margin-bottom: 35px;
+}
+
+
+.mission-main-button {
+    display: inline-block;
+
+    padding: 15px 27px;
+
+    border: 1px solid #159cff;
+    border-radius: 30px;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.mission-main-button:hover {
+    background: #159cff;
+}
+
+
+.missions-page-bottom {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 8%;
+    right: 8%;
+    bottom: 35px;
+
+    display: flex;
+    justify-content: space-between;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+
+
+/* =====================================================
+   INTRODUÇÃO
+===================================================== */
+
+.mission-introduction {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    padding: 130px 8%;
+
+    background: #050505;
+}
+
+
+.mission-introduction h2 {
+    max-width: 650px;
+
+    font-size: clamp(45px, 5vw, 75px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+
+.mission-introduction h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.mission-introduction-text {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.mission-introduction-text p {
+    max-width: 600px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 16px;
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+
+
+/* =====================================================
+   CABEÇALHOS DAS SEÇÕES
+===================================================== */
+
+.mission-section-heading {
+    max-width: 900px;
+
+    margin-bottom: 70px;
+}
+
+
+.mission-section-heading h2 {
+    font-size: clamp(48px, 6vw, 85px);
+
+    line-height: 0.97;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 28px;
+}
+
+
+.mission-section-heading h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.mission-section-heading > p:not(.small-label) {
+    max-width: 680px;
+
+    color: rgba(255, 255, 255, 0.67);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+
+/* =====================================================
+   ANATOMIA
+===================================================== */
+
+.mission-anatomy {
+    padding: 130px 8%;
+
+    background: #080808;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+.mission-anatomy-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.mission-anatomy-item {
+    min-height: 290px;
+
+    padding: 40px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    transition: 0.35s;
+}
+
+
+.mission-anatomy-item:hover {
+    background: rgba(21, 156, 255, 0.06);
+}
+
+
+.mission-anatomy-item > span {
+    display: block;
+
+    color: #159cff;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    margin-bottom: 50px;
+}
+
+
+.mission-anatomy-item h3 {
+    font-size: 23px;
+
+    margin-bottom: 18px;
+}
+
+
+.mission-anatomy-item p {
+    color: rgba(255, 255, 255, 0.6);
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+
+
+/* =====================================================
+   CONCEITOS
+===================================================== */
+
+.mission-concepts {
+    padding: 130px 8%;
+
+    background: #030303;
+}
+
+
+.mission-concepts-list {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+.mission-concepts-list article {
+    display: grid;
+
+    grid-template-columns: 100px 1fr;
+
+    padding: 35px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+.mission-concepts-list article > span {
+    color: #159cff;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+.mission-concepts-list h3 {
+    font-size: 24px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 12px;
+}
+
+
+.mission-concepts-list p {
+    max-width: 700px;
+
+    color: rgba(255, 255, 255, 0.63);
+
+    line-height: 1.7;
+}
+
+
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+.space-timeline {
+    padding: 130px 8%;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(21, 156, 255, 0.08),
+            transparent 30%
+        ),
+        #070707;
+}
+
+
+.timeline-heading {
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+}
+
+
+.timeline-heading > p:not(.small-label) {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.timeline-container {
+    position: relative;
+
+    max-width: 1200px;
+
+    margin: 80px auto 0;
+}
+
+
+.timeline-container::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 50%;
+
+    width: 1px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            #159cff 4%,
+            #159cff 96%,
+            transparent
+        );
+}
+
+
+.timeline-event {
+    position: relative;
+
+    width: 50%;
+
+    padding: 0 55px 70px;
+}
+
+
+.timeline-left {
+    left: 0;
+
+    text-align: right;
+}
+
+
+.timeline-right {
+    left: 50%;
+}
+
+
+.timeline-event::after {
+    content: "";
+
+    position: absolute;
+
+    top: 12px;
+
+    width: 11px;
+    height: 11px;
+
+    border: 2px solid #159cff;
+    border-radius: 50%;
+
+    background: #070707;
+
+    box-shadow: 0 0 20px rgba(21, 156, 255, 0.45);
+}
+
+
+.timeline-left::after {
+    right: -7px;
+}
+
+
+.timeline-right::after {
+    left: -7px;
+}
+
+
+.timeline-card {
+    padding: 28px 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(255, 255, 255, 0.018);
+
+    transition: 0.3s;
+}
+
+
+.timeline-card:hover {
+    border-color: rgba(21, 156, 255, 0.7);
+
+    transform: translateY(-4px);
+}
+
+
+.timeline-year {
+    display: block;
+
+    color: #159cff;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+
+.timeline-card h3 {
+    font-size: 28px;
+
+    margin-bottom: 7px;
+}
+
+
+.timeline-card strong {
+    display: block;
+
+    color: rgba(255, 255, 255, 0.38);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 18px;
+}
+
+
+.timeline-card p {
+    color: rgba(255, 255, 255, 0.66);
+
+    font-size: 14px;
+
+    line-height: 1.65;
+}
+
+
+.timeline-current .timeline-card {
+    border-color: #159cff;
+
+    background: rgba(21, 156, 255, 0.055);
+}
+
+
+.timeline-current::after {
+    background: #159cff;
+}
+
+
+
+/* =====================================================
+   MISSÕES EM PROFUNDIDADE
+===================================================== */
+
+.mission-feature {
+    min-height: 720px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: #050505;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+.mission-feature-reverse .mission-feature-image {
+    order: 2;
+}
+
+
+.mission-feature-reverse .mission-feature-content {
+    order: 1;
+}
+
+
+.mission-feature-image {
+    min-height: 700px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.voyager-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.4)
+        ),
+        url("../imagens/fundo-voyager.jpg");
+}
+
+
+.cassini-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../imagens/fundo-cassini.jpg");
+}
+
+
+.rosetta-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.4)
+        ),
+        url("../imagens/fundo-rosetta.jpg");
+}
+
+
+.perseverance-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.4)
+        ),
+        url("../imagens/fundo-perseverance.jpg");
+}
+
+
+.artemis-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.42)
+        ),
+        url("../imagens/fundo-artemis.jpg");
+}
+
+
+.mission-feature-content {
+    padding: 100px 9%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.mission-feature-content h2 {
+    max-width: 650px;
+
+    font-size: clamp(42px, 5vw, 72px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+
+.mission-feature-content h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.mission-feature-content > p:not(.small-label) {
+    max-width: 600px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+
+
+/* =====================================================
+   DADOS DAS MISSÕES
+===================================================== */
+
+.mission-data-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.mission-data-grid div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.mission-data-grid span {
+    color: #159cff;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.mission-data-grid strong {
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+
+/* =====================================================
+   DESTAQUE
+===================================================== */
+
+.mission-highlight-box {
+    margin-top: 30px;
+
+    max-width: 600px;
+
+    padding: 25px;
+
+    border-left: 2px solid #159cff;
+
+    background: rgba(21, 156, 255, 0.055);
+}
+
+
+.mission-highlight-box span {
+    display: block;
+
+    color: #159cff;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+
+.mission-highlight-box p {
+    color: rgba(255, 255, 255, 0.72);
+
+    line-height: 1.7;
+
+    font-size: 14px;
+}
+
+
+
+/* =====================================================
+   TIPOS DE MISSÃO
+===================================================== */
+
+.mission-types {
+    padding: 130px 8%;
+
+    background: #080808;
+}
+
+
+.mission-types-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+.mission-types-grid article {
+    min-height: 260px;
+
+    padding: 35px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    margin-right: -1px;
+    margin-bottom: -1px;
+
+    transition: 0.3s;
+}
+
+
+.mission-types-grid article:hover {
+    background: rgba(21, 156, 255, 0.05);
+
+    border-color: rgba(21, 156, 255, 0.4);
+}
+
+
+.mission-types-grid span {
+    display: block;
+
+    color: #159cff;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 50px;
+}
+
+
+.mission-types-grid h3 {
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+
+.mission-types-grid p {
+    color: rgba(255, 255, 255, 0.59);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+
+/* =====================================================
+   ENCERRAMENTO
+===================================================== */
+
+.mission-ending {
+    min-height: 720px;
+
+    padding: 120px 8%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(21, 156, 255, 0.13),
+            transparent 38%
+        ),
+        #030303;
+}
+
+
+.mission-ending h2 {
+    max-width: 950px;
+
+    font-size: clamp(55px, 7vw, 100px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 35px;
+}
+
+
+.mission-ending h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.mission-ending > p:not(.small-label) {
+    max-width: 720px;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+
+.mission-ending strong {
+    max-width: 700px;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 19px;
+
+    font-weight: 500;
+
+    line-height: 1.6;
+}
+
+
+
+/* =====================================================
+   RESPONSIVIDADE - MISSÕES
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .mission-anatomy-grid,
+    .mission-types-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mission-feature {
+        grid-template-columns: 1fr;
+    }
+
+    .mission-feature-reverse .mission-feature-image,
+    .mission-feature-reverse .mission-feature-content {
+        order: initial;
+    }
+
+    .mission-feature-image {
+        min-height: 550px;
+    }
+
+}
+
+
+
+@media (max-width: 800px) {
+
+    .mission-introduction {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        padding: 90px 7%;
+    }
+
+
+    .timeline-container::before {
+        left: 12px;
+    }
+
+
+    .timeline-event {
+        width: 100%;
+
+        left: 0;
+
+        padding: 0 0 50px 55px;
+
+        text-align: left;
+    }
+
+
+    .timeline-left,
+    .timeline-right {
+        left: 0;
+
+        text-align: left;
+    }
+
+
+    .timeline-event::after,
+    .timeline-left::after,
+    .timeline-right::after {
+        left: 6px;
+        right: auto;
+    }
+
+
+    .missions-page-bottom {
+        display: none;
+    }
+
+}
+
+
+
+@media (max-width: 600px) {
+
+    .missions-page-hero {
+        padding: 120px 7% 80px;
+
+        background-position: center;
+    }
+
+
+    .missions-page-content h1 {
+        letter-spacing: -3px;
+    }
+
+
+    .mission-anatomy,
+    .mission-concepts,
+    .space-timeline,
+    .mission-types {
+        padding: 90px 7%;
+    }
+
+
+    .mission-section-heading {
+        margin-bottom: 50px;
+    }
+
+
+    .mission-section-heading h2,
+    .mission-introduction h2,
+    .mission-feature-content h2,
+    .mission-ending h2 {
+        letter-spacing: -2px;
+    }
+
+
+    .mission-anatomy-grid,
+    .mission-types-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .mission-anatomy-item {
+        min-height: auto;
+
+        padding: 30px;
+    }
+
+
+    .mission-anatomy-item > span {
+        margin-bottom: 30px;
+    }
+
+
+    .mission-concepts-list article {
+        grid-template-columns: 55px 1fr;
+    }
+
+
+    .timeline-event {
+        padding-left: 45px;
+    }
+
+
+    .timeline-card {
+        padding: 22px;
+    }
+
+
+    .timeline-card h3 {
+        font-size: 23px;
+    }
+
+
+    .mission-feature-image {
+        min-height: 420px;
+    }
+
+
+    .mission-feature-content {
+        padding: 70px 7%;
+    }
+
+
+    .mission-data-grid {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+
+    .mission-ending {
+        min-height: 650px;
+
+        padding: 90px 7%;
+    }
+
+}
+
+/* =====================================================
+   FOGUETES
+===================================================== */
+
+.rockets-hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 130px 8% 100px;
+
+    overflow: hidden;
+
+    background-image: url("../imagens/fundo-foguete.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.rockets-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.93) 0%,
+            rgba(0, 0, 0, 0.65) 45%,
+            rgba(0, 0, 0, 0.12) 82%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.6)
+        );
+}
+
+
+.rockets-hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 950px;
+}
+
+
+.rockets-label {
+    color: #159cff;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+}
+
+
+.rockets-hero h1 {
+    max-width: 1000px;
+
+    font-size: clamp(55px, 7vw, 105px);
+
+    line-height: 0.94;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.rockets-hero h1 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.rockets-hero-content > p:not(.rockets-label) {
+    max-width: 650px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 17px;
+
+    line-height: 1.75;
+
+    margin-bottom: 35px;
+}
+
+
+.rocket-button {
+    display: inline-block;
+
+    padding: 15px 27px;
+
+    border: 1px solid #159cff;
+
+    border-radius: 30px;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.rocket-button:hover {
+    background: #159cff;
+}
+
+
+.rockets-hero-bottom {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 8%;
+    right: 8%;
+    bottom: 35px;
+
+    display: flex;
+
+    gap: 40px;
+
+    color: rgba(255, 255, 255, 0.4);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+
+
+/* =====================================================
+   INTRO
+===================================================== */
+
+.rocket-intro {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    padding: 130px 8%;
+
+    background: #050505;
+}
+
+
+.rocket-intro h2 {
+    font-size: clamp(45px, 5vw, 75px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+
+.rocket-intro h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.rocket-intro-text {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.rocket-intro-text p {
+    max-width: 600px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+
+
+/* =====================================================
+   CABEÇALHO DAS SEÇÕES
+===================================================== */
+
+.rocket-section-heading {
+    max-width: 900px;
+
+    margin-bottom: 70px;
+}
+
+
+.rocket-section-heading h2 {
+    font-size: clamp(48px, 6vw, 85px);
+
+    line-height: 0.97;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 28px;
+}
+
+
+.rocket-section-heading h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.rocket-section-heading > p:not(.small-label) {
+    max-width: 680px;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    line-height: 1.8;
+}
+
+
+
+/* =====================================================
+   FORÇAS
+===================================================== */
+
+.rocket-forces {
+    padding: 130px 8%;
+
+    background: #080808;
+}
+
+
+.rocket-forces-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+.rocket-forces-grid article {
+    min-height: 300px;
+
+    padding: 38px;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    margin-right: -1px;
+
+    transition: 0.3s;
+}
+
+
+.rocket-forces-grid article:hover {
+    background: rgba(21, 156, 255, 0.05);
+
+    border-color: rgba(21, 156, 255, 0.5);
+}
+
+
+.rocket-forces-grid span {
+    display: block;
+
+    color: #159cff;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 65px;
+}
+
+
+.rocket-forces-grid h3 {
+    font-size: 21px;
+
+    margin-bottom: 16px;
+}
+
+
+.rocket-forces-grid p {
+    color: rgba(255, 255, 255, 0.6);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+
+/* =====================================================
+   ESTÁGIOS
+===================================================== */
+
+.rocket-stages {
+    padding: 130px 8%;
+
+    background: #030303;
+}
+
+
+.rocket-stages-list {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+.rocket-stages-list article {
+    display: grid;
+
+    grid-template-columns: 150px 1fr;
+
+    padding: 50px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+.stage-number {
+    color: #159cff;
+
+    font-size: 35px;
+
+    font-weight: 700;
+}
+
+
+.stage-label {
+    color: rgba(255, 255, 255, 0.4);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+
+.rocket-stages-list h3 {
+    font-size: clamp(30px, 3vw, 48px);
+
+    margin-bottom: 12px;
+}
+
+
+.rocket-stages-list article div > p:last-child {
+    max-width: 680px;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    line-height: 1.7;
+}
+
+
+
+/* =====================================================
+   MOTOR
+===================================================== */
+
+.rocket-engine-section {
+    min-height: 720px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: #050505;
+}
+
+
+.rocket-engine-image {
+    min-height: 700px;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../imagens/fundo-motor-foguete.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+.rocket-engine-content {
+    padding: 100px 9%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.rocket-engine-content h2 {
+    font-size: clamp(45px, 5vw, 75px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+
+.rocket-engine-content h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.rocket-engine-content > p:not(.small-label) {
+    max-width: 600px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+
+.rocket-engine-types {
+    margin-top: 30px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.rocket-engine-types div {
+    display: flex;
+
+    gap: 25px;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.rocket-engine-types span {
+    color: #159cff;
+
+    font-size: 10px;
+}
+
+
+
+/* =====================================================
+   ÓRBITA
+===================================================== */
+
+.rocket-orbit {
+    min-height: 700px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 120px 8%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(21, 156, 255, 0.12),
+            transparent 38%
+        ),
+        #050505;
+}
+
+
+.rocket-orbit h2 {
+    font-size: clamp(55px, 7vw, 100px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.rocket-orbit h2 span {
+    color: #159cff;
+}
+
+
+.rocket-orbit > p:not(.small-label) {
+    max-width: 740px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.8;
+}
+
+
+.rocket-orbit > strong {
+    color: rgba(255, 255, 255, 0.85);
+
+    font-weight: 500;
+}
+
+
+.orbit-visual {
+    position: relative;
+
+    width: 320px;
+
+    height: 180px;
+
+    margin: 60px auto;
+}
+
+
+.orbit-earth {
+    position: absolute;
+
+    width: 115px;
+
+    height: 115px;
+
+    left: 102px;
+
+    top: 35px;
+
+    border: 1px solid #159cff;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.orbit-line {
+    position: absolute;
+
+    inset: 0;
+
+    border: 1px solid rgba(21, 156, 255, 0.45);
+
+    border-radius: 50%;
+}
+
+
+.orbit-object {
+    position: absolute;
+
+    right: -4px;
+
+    top: 77px;
+
+    color: #159cff;
+
+    font-size: 20px;
+}
+
+
+
+/* =====================================================
+   SEQUÊNCIA DE LANÇAMENTO
+===================================================== */
+
+.rocket-launch-sequence {
+    padding: 130px 8%;
+
+    background: #080808;
+}
+
+
+.launch-sequence-list {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.launch-sequence-list article {
+    display: grid;
+
+    grid-template-columns: 160px 1fr;
+
+    padding: 35px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.launch-sequence-list article > span {
+    color: #159cff;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+.launch-sequence-list h3 {
+    font-size: 24px;
+
+    margin-bottom: 10px;
+}
+
+
+.launch-sequence-list p {
+    max-width: 650px;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    line-height: 1.7;
+}
+
+
+
+/* =====================================================
+   EVOLUÇÃO
+===================================================== */
+
+.rocket-evolution {
+    padding: 130px 8%;
+
+    background: #030303;
+}
+
+
+.rocket-evolution-line {
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    padding-top: 35px;
+}
+
+
+.rocket-evolution-line div {
+    position: relative;
+
+    padding-right: 20px;
+}
+
+
+.rocket-evolution-line div::before {
+    content: "";
+
+    position: absolute;
+
+    width: 9px;
+
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #159cff;
+
+    top: -40px;
+
+    left: 0;
+}
+
+
+.rocket-evolution-line span {
+    display: block;
+
+    color: #159cff;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 9px;
+}
+
+
+.rocket-evolution-line strong {
+    font-size: 14px;
+}
+
+
+
+/* =====================================================
+   FOGUETES EM DESTAQUE
+===================================================== */
+
+.rocket-feature {
+    min-height: 720px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: #050505;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+.rocket-feature-reverse .rocket-feature-image {
+    order: 2;
+}
+
+
+.rocket-feature-reverse .rocket-feature-content {
+    order: 1;
+}
+
+
+.rocket-feature-image {
+    min-height: 700px;
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+.saturn-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.4)
+        ),
+        url("../imagens/fundo-saturn-v.jpg");
+}
+
+
+.shuttle-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.38)
+        ),
+        url("../imagens/fundo-shuttle.jpg");
+}
+
+
+.falcon-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.4)
+        ),
+        url("../imagens/fundo-falcon9.jpg");
+}
+
+
+.sls-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.4)
+        ),
+        url("../imagens/fundo-sls.jpg");
+}
+
+
+.rocket-feature-content {
+    padding: 100px 9%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.rocket-feature-content h2 {
+    font-size: clamp(42px, 5vw, 72px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+
+.rocket-feature-content h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.rocket-feature-content > p:not(.small-label) {
+    max-width: 600px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+
+.rocket-data {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.rocket-data div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.rocket-data span {
+    color: #159cff;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.rocket-data strong {
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+
+/* =====================================================
+   REUTILIZAÇÃO
+===================================================== */
+
+.rocket-reuse {
+    min-height: 650px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 120px 8%;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(21, 156, 255, 0.12),
+            transparent 30%
+        ),
+        #050505;
+}
+
+
+.rocket-reuse h2 {
+    max-width: 950px;
+
+    font-size: clamp(55px, 7vw, 95px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.rocket-reuse h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.rocket-reuse > p:not(.small-label) {
+    max-width: 690px;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+}
+
+
+
+/* =====================================================
+   ENCERRAMENTO
+===================================================== */
+
+.rocket-ending {
+    min-height: 700px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 120px 8%;
+
+    background: #030303;
+}
+
+
+.rocket-ending h2 {
+    max-width: 950px;
+
+    font-size: clamp(55px, 7vw, 100px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.rocket-ending h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.rocket-ending > p:not(.small-label) {
+    max-width: 680px;
+
+    color: rgba(255, 255, 255, 0.68);
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+
+
+/* =====================================================
+   RESPONSIVIDADE - FOGUETES
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .rocket-forces-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .rocket-engine-section,
+    .rocket-feature {
+        grid-template-columns: 1fr;
+    }
+
+
+    .rocket-feature-reverse .rocket-feature-image,
+    .rocket-feature-reverse .rocket-feature-content {
+        order: initial;
+    }
+
+
+    .rocket-engine-image,
+    .rocket-feature-image {
+        min-height: 520px;
+    }
+
+
+    .rocket-evolution-line {
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 45px 20px;
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .rocket-intro {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 90px 7%;
+    }
+
+
+    .rocket-stages-list article,
+    .launch-sequence-list article {
+        grid-template-columns: 90px 1fr;
+    }
+
+
+    .rocket-evolution-line {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .rockets-hero {
+        padding: 120px 7% 80px;
+    }
+
+
+    .rockets-hero h1,
+    .rocket-orbit h2,
+    .rocket-reuse h2,
+    .rocket-ending h2 {
+        letter-spacing: -3px;
+    }
+
+
+    .rockets-hero-bottom {
+        display: none;
+    }
+
+
+    .rocket-forces,
+    .rocket-stages,
+    .rocket-launch-sequence,
+    .rocket-evolution {
+        padding: 90px 7%;
+    }
+
+
+    .rocket-forces-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .rocket-forces-grid article {
+        min-height: auto;
+    }
+
+
+    .rocket-forces-grid span {
+        margin-bottom: 35px;
+    }
+
+
+    .rocket-stages-list article,
+    .launch-sequence-list article {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .rocket-engine-image,
+    .rocket-feature-image {
+        min-height: 420px;
+    }
+
+
+    .rocket-engine-content,
+    .rocket-feature-content {
+        padding: 70px 7%;
+    }
+
+
+    .rocket-data {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+
+    .rocket-evolution-line {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    .rocket-evolution-line div {
+        padding-left: 25px;
+    }
+
+
+    .rocket-evolution-line div::before {
+        top: 4px;
+        left: 0;
+    }
+
+
+    .rocket-evolution-line {
+        border-top: none;
+
+        border-left: 1px solid rgba(255, 255, 255, 0.15);
+
+        padding-top: 0;
+    }
+
+
+    .orbit-visual {
+        width: 250px;
+
+        height: 150px;
+    }
+
+
+    .orbit-earth {
+        width: 90px;
+
+        height: 90px;
+
+        left: 80px;
+
+        top: 30px;
+    }
+
+
+    .orbit-object {
+        top: 63px;
+    }
+
+
+    .rocket-reuse,
+    .rocket-ending {
+        padding: 90px 7%;
+    }
+
+}
+
+/* =====================================================
+   PLANETAS / EXOPLANETAS
+===================================================== */
+
+.planets-hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 130px 8% 100px;
+
+    overflow: hidden;
+
+    background-image: url("../imagens/fundo-planeta.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.planets-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.94) 0%,
+            rgba(0, 0, 0, 0.68) 45%,
+            rgba(0, 0, 0, 0.15) 82%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.6)
+        );
+}
+
+
+.planets-hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1000px;
+}
+
+
+.planets-label {
+    color: #159cff;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+}
+
+
+.planets-hero h1 {
+    max-width: 1050px;
+
+    font-size: clamp(55px, 7vw, 105px);
+
+    line-height: 0.94;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 32px;
+}
+
+
+.planets-hero h1 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.planets-hero-content > p:not(.planets-label) {
+    max-width: 650px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 17px;
+    line-height: 1.75;
+
+    margin-bottom: 35px;
+}
+
+
+.planet-button {
+    display: inline-block;
+
+    padding: 15px 27px;
+
+    border: 1px solid #159cff;
+    border-radius: 30px;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.planet-button:hover {
+    background: #159cff;
+}
+
+
+.planets-hero-bottom {
+    position: absolute;
+
+    z-index: 2;
+
+    bottom: 35px;
+
+    left: 8%;
+    right: 8%;
+
+    display: flex;
+    gap: 40px;
+
+    color: rgba(255, 255, 255, 0.4);
+
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+
+
+/* =====================================================
+   INTRODUÇÃO
+===================================================== */
+
+.planet-intro {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    padding: 130px 8%;
+
+    background: #050505;
+}
+
+
+.planet-intro h2 {
+    font-size: clamp(45px, 5vw, 75px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+
+.planet-intro h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.planet-intro-text {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.planet-intro-text p {
+    max-width: 600px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+
+
+/* =====================================================
+   DETECÇÃO
+===================================================== */
+
+.planet-detection {
+    min-height: 720px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: #080808;
+}
+
+
+.planet-detection-image {
+    min-height: 700px;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("../imagens/fundo-exoplaneta.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.planet-detection-content {
+    padding: 100px 9%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.planet-detection-content h2 {
+    font-size: clamp(44px, 5vw, 75px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+
+.planet-detection-content h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.planet-detection-content > p:not(.small-label) {
+    max-width: 600px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+
+.planet-methods {
+    margin-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.planet-methods > div {
+    display: grid;
+
+    grid-template-columns: 55px 1fr;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.planet-methods span {
+    color: #159cff;
+
+    font-size: 10px;
+}
+
+
+.planet-methods h3 {
+    font-size: 14px;
+
+    margin-bottom: 6px;
+}
+
+
+.planet-methods p {
+    color: rgba(255, 255, 255, 0.56);
+
+    line-height: 1.6;
+
+    font-size: 13px;
+}
+
+
+
+/* =====================================================
+   SUPER TERRAS
+===================================================== */
+
+.super-earth-section {
+    min-height: 680px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 120px 8%;
+
+    background:
+        radial-gradient(
+            circle at 70% 50%,
+            rgba(21, 156, 255, 0.12),
+            transparent 30%
+        ),
+        #030303;
+}
+
+
+.super-earth-section h2 {
+    max-width: 950px;
+
+    font-size: clamp(55px, 7vw, 95px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.super-earth-section h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.super-earth-section > p:not(.small-label) {
+    max-width: 700px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.8;
+}
+
+
+.super-earth-comparison {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    margin-top: 60px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.super-earth-comparison div {
+    padding: 30px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.super-earth-comparison span {
+    display: block;
+
+    color: #159cff;
+
+    font-size: 10px;
+
+    margin-bottom: 30px;
+}
+
+
+.super-earth-comparison strong {
+    display: block;
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+
+.super-earth-comparison p {
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 13px;
+}
+
+
+.super-earth-highlight {
+    background: rgba(21, 156, 255, 0.05);
+}
+
+
+
+/* =====================================================
+   PLANETAS EM DESTAQUE
+===================================================== */
+
+.planet-feature {
+    min-height: 720px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: #050505;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.planet-feature-reverse .planet-feature-image {
+    order: 2;
+}
+
+
+.planet-feature-reverse .planet-feature-content {
+    order: 1;
+}
+
+
+.planet-feature-image {
+    min-height: 700px;
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+.toi-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.4)
+        ),
+        url("../imagens/fundo-toi700.jpg");
+}
+
+
+.hd20794-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.4)
+        ),
+        url("../imagens/fundo-hd20794.jpg");
+}
+
+
+.cheyava-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../imagens/fundo-cheyava.jpg");
+}
+
+
+.planet-feature-content {
+    padding: 100px 9%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.planet-feature-content h2 {
+    font-size: clamp(43px, 5vw, 73px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+
+.planet-feature-content h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.planet-feature-content > p:not(.small-label) {
+    max-width: 600px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+
+.planet-data {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    padding-top: 30px;
+
+    margin-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.planet-data div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.planet-data span {
+    color: #159cff;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.planet-data strong {
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+.planet-warning {
+    max-width: 580px;
+
+    margin-top: 30px;
+
+    padding: 20px 22px;
+
+    border-left: 2px solid #159cff;
+
+    background: rgba(21, 156, 255, 0.05);
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 14px;
+}
+
+
+.planet-highlight-number {
+    margin-top: 30px;
+}
+
+
+.planet-highlight-number strong {
+    display: block;
+
+    color: #159cff;
+
+    font-size: clamp(70px, 8vw, 120px);
+
+    line-height: 0.9;
+}
+
+
+.planet-highlight-number span {
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+
+
+/* =====================================================
+   TRAPPIST
+===================================================== */
+
+.trappist-section {
+    min-height: 780px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    padding: 110px 8%;
+
+    background-image: url("../imagens/fundo-trappist1.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+.trappist-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.9)
+        );
+}
+
+
+.trappist-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+}
+
+
+.trappist-content h2 {
+    font-size: clamp(55px, 7vw, 100px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.trappist-content h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.trappist-content > p:not(.small-label) {
+    max-width: 650px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+}
+
+
+
+/* =====================================================
+   TRAPPIST RESULTADOS
+===================================================== */
+
+.trappist-results {
+    padding: 130px 8%;
+
+    background: #050505;
+}
+
+
+.planet-section-heading {
+    max-width: 900px;
+
+    margin-bottom: 70px;
+}
+
+
+.planet-section-heading h2 {
+    font-size: clamp(48px, 6vw, 85px);
+
+    line-height: 0.97;
+
+    letter-spacing: -4px;
+}
+
+
+.planet-section-heading h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.trappist-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+.trappist-grid article {
+    min-height: 310px;
+
+    padding: 35px;
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+
+    margin-right: -1px;
+
+    transition: 0.3s;
+}
+
+
+.trappist-grid article:hover {
+    background: rgba(21, 156, 255, 0.05);
+
+    border-color: rgba(21, 156, 255, 0.5);
+}
+
+
+.trappist-grid article > span {
+    display: block;
+
+    color: #159cff;
+
+    font-size: 40px;
+
+    font-weight: 700;
+
+    margin-bottom: 45px;
+}
+
+
+.trappist-grid h3 {
+    font-size: 19px;
+
+    margin-bottom: 15px;
+}
+
+
+.trappist-grid p {
+    color: rgba(255, 255, 255, 0.58);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+
+/* =====================================================
+   MARTE
+===================================================== */
+
+.mars-life {
+    min-height: 780px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 110px 8%;
+
+    background-image: url("../imagens/fundo-marte-vida.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+.mars-life-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.92),
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.1)
+        );
+}
+
+
+.mars-life-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 800px;
+}
+
+
+.mars-life h2 {
+    font-size: clamp(55px, 7vw, 100px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.mars-life h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.mars-life-content > p:not(.small-label) {
+    max-width: 650px;
+
+    color: rgba(255, 255, 255, 0.75);
+
+    line-height: 1.8;
+
+    margin-bottom: 16px;
+}
+
+
+
+/* =====================================================
+   CHEYAVA
+===================================================== */
+
+.biosignature-list {
+    margin-top: 30px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.biosignature-list div {
+    display: flex;
+
+    gap: 25px;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.biosignature-list span {
+    color: #159cff;
+
+    font-size: 10px;
+}
+
+
+.biosignature-list strong {
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+
+
+/* =====================================================
+   BIOASSINATURA
+===================================================== */
+
+.biosignature-section {
+    min-height: 700px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 120px 8%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(21, 156, 255, 0.12),
+            transparent 35%
+        ),
+        #030303;
+}
+
+
+.biosignature-section h2 {
+    max-width: 1000px;
+
+    font-size: clamp(55px, 7vw, 100px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.biosignature-section h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.biosignature-section > p:not(.small-label) {
+    max-width: 720px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.8;
+}
+
+
+.bio-equation {
+    width: 100%;
+
+    max-width: 1100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 55px;
+}
+
+
+.bio-equation div {
+    padding: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+.bio-equation strong {
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+.bio-equation > span {
+    color: #159cff;
+
+    font-size: 22px;
+}
+
+
+.bio-final {
+    border-color: #159cff !important;
+}
+
+
+
+/* =====================================================
+   DETECÇÃO DE VIDA
+===================================================== */
+
+.life-detection {
+    padding: 130px 8%;
+
+    background: #080808;
+}
+
+
+.life-detection-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+.life-detection-grid article {
+    min-height: 260px;
+
+    padding: 35px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    margin-right: -1px;
+
+    margin-bottom: -1px;
+}
+
+
+.life-detection-grid span {
+    display: block;
+
+    color: #159cff;
+
+    font-size: 10px;
+
+    margin-bottom: 45px;
+}
+
+
+.life-detection-grid h3 {
+    font-size: 19px;
+
+    margin-bottom: 15px;
+}
+
+
+.life-detection-grid p {
+    color: rgba(255, 255, 255, 0.56);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+
+/* =====================================================
+   HABITÁVEL X HABITADO
+===================================================== */
+
+.habitable-section {
+    min-height: 700px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 120px 8%;
+
+    background: #030303;
+}
+
+
+.habitable-comparison {
+    display: grid;
+
+    grid-template-columns: 1fr 100px 1fr;
+
+    align-items: center;
+
+    margin-top: 35px;
+
+    margin-bottom: 45px;
+}
+
+
+.habitable-comparison > div:not(.habitable-divider) {
+    padding: 50px;
+}
+
+
+.habitable-comparison span {
+    color: #159cff;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+
+.habitable-comparison h2 {
+    max-width: 500px;
+
+    font-size: clamp(38px, 4vw, 65px);
+
+    line-height: 1;
+
+    margin-top: 18px;
+}
+
+
+.habitable-divider {
+    text-align: center;
+
+    color: #159cff;
+
+    font-size: 50px;
+}
+
+
+.habitable-section > p:not(.small-label) {
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.6);
+
+    line-height: 1.7;
+}
+
+
+
+/* =====================================================
+   ENCERRAMENTO
+===================================================== */
+
+.planet-ending {
+    min-height: 720px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 120px 8%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(21, 156, 255, 0.12),
+            transparent 40%
+        ),
+        #050505;
+}
+
+
+.planet-ending h2 {
+    max-width: 1000px;
+
+    font-size: clamp(55px, 7vw, 100px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.planet-ending h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.planet-ending > p:not(.small-label) {
+    max-width: 720px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.8;
+}
+
+
+
+/* =====================================================
+   RESPONSIVIDADE - PLANETAS
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .planet-detection,
+    .planet-feature {
+        grid-template-columns: 1fr;
+    }
+
+
+    .planet-feature-reverse .planet-feature-image,
+    .planet-feature-reverse .planet-feature-content {
+        order: initial;
+    }
+
+
+    .planet-detection-image,
+    .planet-feature-image {
+        min-height: 520px;
+    }
+
+
+    .trappist-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .life-detection-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .bio-equation {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .planet-intro {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 90px 7%;
+    }
+
+
+    .super-earth-comparison {
+        grid-template-columns: 1fr;
+    }
+
+
+    .habitable-comparison {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+
+    .habitable-comparison h2 {
+        margin-left: auto;
+
+        margin-right: auto;
+    }
+
+
+    .habitable-divider {
+        padding: 10px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .planets-hero {
+        padding: 120px 7% 80px;
+    }
+
+
+    .planets-hero-bottom {
+        display: none;
+    }
+
+
+    .planets-hero h1,
+    .super-earth-section h2,
+    .trappist-content h2,
+    .mars-life h2,
+    .biosignature-section h2,
+    .planet-ending h2 {
+        letter-spacing: -3px;
+    }
+
+
+    .super-earth-section,
+    .trappist-results,
+    .biosignature-section,
+    .life-detection,
+    .habitable-section,
+    .planet-ending {
+        padding: 90px 7%;
+    }
+
+
+    .planet-detection-image,
+    .planet-feature-image {
+        min-height: 420px;
+    }
+
+
+    .planet-detection-content,
+    .planet-feature-content {
+        padding: 70px 7%;
+    }
+
+
+    .planet-data {
+        grid-template-columns: 1fr;
+
+        gap: 22px;
+    }
+
+
+    .trappist-section,
+    .mars-life {
+        min-height: 650px;
+
+        padding: 90px 7%;
+    }
+
+
+    .trappist-grid,
+    .life-detection-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .bio-equation {
+        flex-direction: column;
+    }
+
+
+    .bio-equation > span {
+        transform: rotate(90deg);
+    }
+
+
+    .habitable-comparison > div:not(.habitable-divider) {
+        padding: 30px 10px;
+    }
+
+}
+
+/* =====================================================
+   ASTRONAUTAS
+===================================================== */
+
+.astronaut-hero {
+    min-height: 100vh;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 130px 8% 100px;
+
+    overflow: hidden;
+
+    background-image: url("../imagens/fundo-astronautas.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.astronaut-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.94) 0%,
+            rgba(0, 0, 0, 0.65) 45%,
+            rgba(0, 0, 0, 0.12) 82%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.6)
+        );
+}
+
+
+.astronaut-hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1000px;
+}
+
+
+.astronaut-label {
+    color: #159cff;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+}
+
+
+.astronaut-hero h1 {
+    max-width: 1050px;
+
+    font-size: clamp(55px, 7vw, 105px);
+
+    line-height: 0.94;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 32px;
+}
+
+
+.astronaut-hero h1 span {
+    display: block;
+    color: #159cff;
+}
+
+
+.astronaut-hero-content > p:not(.astronaut-label) {
+    max-width: 650px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 17px;
+    line-height: 1.75;
+
+    margin-bottom: 35px;
+}
+
+
+.astronaut-button {
+    display: inline-block;
+
+    padding: 15px 27px;
+
+    border: 1px solid #159cff;
+    border-radius: 30px;
+
+    color: #fff;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.astronaut-button:hover {
+    background: #159cff;
+}
+
+
+.astronaut-hero-bottom {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 8%;
+    right: 8%;
+    bottom: 35px;
+
+    display: flex;
+
+    gap: 40px;
+
+    color: rgba(255, 255, 255, 0.4);
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+}
+
+
+
+/* =====================================================
+   INTRODUÇÃO
+===================================================== */
+
+.human-space-intro {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    padding: 130px 8%;
+
+    background: #050505;
+}
+
+
+.human-space-intro h2 {
+    font-size: clamp(45px, 5vw, 75px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+
+.human-space-intro h2 span {
+    display: block;
+    color: #159cff;
+}
+
+
+.human-space-intro-text {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.human-space-intro-text p {
+    max-width: 600px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+
+
+/* =====================================================
+   CABEÇALHO
+===================================================== */
+
+.astronaut-section-heading {
+    max-width: 900px;
+
+    margin-bottom: 70px;
+}
+
+
+.astronaut-section-heading h2 {
+    font-size: clamp(48px, 6vw, 85px);
+
+    line-height: 0.97;
+
+    letter-spacing: -4px;
+}
+
+
+.astronaut-section-heading h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+
+/* =====================================================
+   CORPO HUMANO
+===================================================== */
+
+.space-body {
+    padding: 130px 8%;
+
+    background: #080808;
+}
+
+
+.space-body-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+.space-body-grid article {
+    min-height: 285px;
+
+    padding: 38px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    margin-right: -1px;
+    margin-bottom: -1px;
+
+    transition: 0.3s;
+}
+
+
+.space-body-grid article:hover {
+    background: rgba(21, 156, 255, 0.05);
+
+    border-color: rgba(21, 156, 255, 0.45);
+}
+
+
+.space-body-grid span {
+    display: block;
+
+    color: #159cff;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 50px;
+}
+
+
+.space-body-grid h3 {
+    font-size: 20px;
+
+    margin-bottom: 15px;
+}
+
+
+.space-body-grid p {
+    color: rgba(255, 255, 255, 0.58);
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+
+/* =====================================================
+   EXERCÍCIO
+===================================================== */
+
+.astronaut-quote {
+    min-height: 650px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 120px 8%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(21, 156, 255, 0.13),
+            transparent 38%
+        ),
+        #030303;
+}
+
+
+.astronaut-quote h2 {
+    max-width: 1000px;
+
+    font-size: clamp(55px, 7vw, 100px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.astronaut-quote h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.astronaut-quote > p:not(.small-label) {
+    max-width: 740px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.8;
+}
+
+
+
+/* =====================================================
+   TREINAMENTO
+===================================================== */
+
+.astronaut-training {
+    min-height: 720px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: #050505;
+}
+
+
+.astronaut-training-image {
+    min-height: 700px;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../imagens/fundo-treinamento.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+.astronaut-training-content {
+    padding: 100px 9%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.astronaut-training-content h2 {
+    font-size: clamp(44px, 5vw, 75px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+
+.astronaut-training-content h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.astronaut-training-content > p:not(.small-label) {
+    max-width: 600px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+
+.training-list {
+    margin-top: 25px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.training-list div {
+    display: flex;
+
+    gap: 25px;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.training-list span {
+    color: #159cff;
+
+    font-size: 10px;
+}
+
+
+
+/* =====================================================
+   EVA
+===================================================== */
+
+.eva-section {
+    min-height: 820px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    padding: 110px 8%;
+
+    background-image: url("../imagens/fundo-eva.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+.eva-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.04),
+            rgba(0, 0, 0, 0.92)
+        );
+}
+
+
+.eva-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 950px;
+}
+
+
+.eva-content h2 {
+    font-size: clamp(55px, 7vw, 100px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.eva-content h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.eva-content > p:not(.small-label) {
+    max-width: 680px;
+
+    color: rgba(255, 255, 255, 0.76);
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+
+.eva-systems {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+}
+
+
+.eva-systems div {
+    padding-right: 25px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+
+.eva-systems span {
+    display: block;
+
+    color: #159cff;
+
+    font-size: 9px;
+
+    margin-bottom: 6px;
+}
+
+
+.eva-systems strong {
+    font-size: 12px;
+}
+
+
+
+/* =====================================================
+   SEÇÕES DE ASTRONAUTAS
+===================================================== */
+
+.astronaut-feature {
+    min-height: 720px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: #050505;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.astronaut-feature-reverse .astronaut-feature-image {
+    order: 2;
+}
+
+
+.astronaut-feature-reverse .astronaut-feature-content {
+    order: 1;
+}
+
+
+.astronaut-feature-image {
+    min-height: 700px;
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+.iss-human-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../imagens/fundo-iss-astronauta.jpg");
+}
+
+
+.gagarin-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../imagens/fundo-gagarin.jpg");
+}
+
+
+.armstrong-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../imagens/fundo-armstrong.jpg");
+}
+
+
+.jemison-image {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../imagens/fundo-jemison.jpg");
+}
+
+
+.astronaut-feature-content {
+    padding: 100px 9%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.astronaut-feature-content h2 {
+    font-size: clamp(42px, 5vw, 72px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+
+.astronaut-feature-content h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.astronaut-feature-content > p:not(.small-label) {
+    max-width: 600px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+
+.astronaut-data {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 30px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.astronaut-data div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.astronaut-data span {
+    color: #159cff;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+
+.astronaut-data strong {
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+
+/* =====================================================
+   HISTÓRIA
+===================================================== */
+
+.astronaut-history {
+    padding: 130px 8%;
+
+    background: #080808;
+}
+
+
+.astronaut-history-line {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+.astronaut-history-line article {
+    display: grid;
+
+    grid-template-columns: 150px 1fr;
+
+    padding: 40px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+.astronaut-history-year {
+    color: #159cff;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.astronaut-history-line h3 {
+    font-size: clamp(26px, 3vw, 42px);
+
+    margin-bottom: 6px;
+}
+
+
+.astronaut-history-line strong {
+    display: block;
+
+    color: rgba(255, 255, 255, 0.38);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+
+.astronaut-history-line p {
+    max-width: 700px;
+
+    color: rgba(255, 255, 255, 0.62);
+
+    line-height: 1.7;
+}
+
+
+.astronaut-history-current {
+    background: rgba(21, 156, 255, 0.04);
+}
+
+
+
+/* =====================================================
+   ARTEMIS CREW
+===================================================== */
+
+.artemis-crew-section {
+    min-height: 800px;
+
+    display: grid;
+
+    grid-template-columns: 0.85fr 1.15fr;
+
+    background: #030303;
+}
+
+
+.artemis-crew-image {
+    min-height: 760px;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.03),
+            rgba(0, 0, 0, 0.25)
+        ),
+        url("../imagens/fundo-artemis-crew.jpg");
+
+    background-size: cover;
+
+    background-position: center top;
+
+    background-repeat: no-repeat;
+}
+
+
+.artemis-crew-content {
+    padding: 100px 9%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.artemis-crew-content h2 {
+    font-size: clamp(45px, 5vw, 75px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+
+.artemis-crew-content h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.artemis-crew-content > p:not(.small-label) {
+    max-width: 650px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.8;
+
+    margin-bottom: 17px;
+}
+
+
+.artemis-crew-list {
+    margin-top: 30px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.artemis-crew-list div {
+    display: grid;
+
+    grid-template-columns: 45px 1fr auto;
+
+    gap: 20px;
+
+    align-items: center;
+
+    padding: 16px 0;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+.artemis-crew-list span {
+    color: #159cff;
+
+    font-size: 10px;
+}
+
+
+.artemis-crew-list strong {
+    font-size: 14px;
+}
+
+
+.artemis-crew-list small {
+    color: rgba(255, 255, 255, 0.4);
+
+    font-size: 10px;
+}
+
+
+
+/* =====================================================
+   MARTE
+===================================================== */
+
+.humans-mars {
+    min-height: 750px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 120px 8%;
+
+    background:
+        radial-gradient(
+            circle at 75% 50%,
+            rgba(21, 156, 255, 0.12),
+            transparent 32%
+        ),
+        #050505;
+}
+
+
+.humans-mars > h2 {
+    max-width: 1000px;
+
+    font-size: clamp(55px, 7vw, 100px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.humans-mars > h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.humans-mars > p:not(.small-label) {
+    max-width: 720px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.8;
+}
+
+
+.mars-human-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    margin-top: 60px;
+}
+
+
+.mars-human-grid article {
+    min-height: 240px;
+
+    padding: 30px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    margin-right: -1px;
+}
+
+
+.mars-human-grid span {
+    display: block;
+
+    color: #159cff;
+
+    font-size: 10px;
+
+    margin-bottom: 40px;
+}
+
+
+.mars-human-grid h3 {
+    font-size: 18px;
+
+    margin-bottom: 13px;
+}
+
+
+.mars-human-grid p {
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+
+/* =====================================================
+   ENCERRAMENTO
+===================================================== */
+
+.astronaut-ending {
+    min-height: 720px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 120px 8%;
+
+    background: #030303;
+}
+
+
+.astronaut-ending h2 {
+    max-width: 1050px;
+
+    font-size: clamp(55px, 7vw, 100px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.astronaut-ending h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.astronaut-ending > p:not(.small-label) {
+    max-width: 750px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.8;
+}
+
+
+
+/* =====================================================
+   RESPONSIVIDADE - ASTRONAUTAS
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .space-body-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .astronaut-training,
+    .astronaut-feature,
+    .artemis-crew-section {
+        grid-template-columns: 1fr;
+    }
+
+
+    .astronaut-feature-reverse .astronaut-feature-image,
+    .astronaut-feature-reverse .astronaut-feature-content {
+        order: initial;
+    }
+
+
+    .astronaut-training-image,
+    .astronaut-feature-image {
+        min-height: 520px;
+    }
+
+
+    .artemis-crew-image {
+        min-height: 700px;
+
+        background-size: contain;
+
+        background-color: #030303;
+    }
+
+
+    .mars-human-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 750px) {
+
+    .human-space-intro {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+
+        padding: 90px 7%;
+    }
+
+
+    .astronaut-history-line article {
+        grid-template-columns: 90px 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .astronaut-hero {
+        padding: 120px 7% 80px;
+    }
+
+
+    .astronaut-hero-bottom {
+        display: none;
+    }
+
+
+    .astronaut-hero h1,
+    .astronaut-quote h2,
+    .eva-content h2,
+    .humans-mars > h2,
+    .astronaut-ending h2 {
+        letter-spacing: -3px;
+    }
+
+
+    .space-body,
+    .astronaut-history,
+    .humans-mars,
+    .astronaut-ending {
+        padding: 90px 7%;
+    }
+
+
+    .space-body-grid,
+    .mars-human-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .space-body-grid article {
+        min-height: auto;
+    }
+
+
+    .astronaut-training-image,
+    .astronaut-feature-image {
+        min-height: 420px;
+    }
+
+
+    .astronaut-training-content,
+    .astronaut-feature-content,
+    .artemis-crew-content {
+        padding: 70px 7%;
+    }
+
+
+    .eva-section {
+        min-height: 700px;
+
+        padding: 90px 7%;
+
+        background-position: center;
+    }
+
+
+    .eva-systems {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .astronaut-data {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+
+    .astronaut-history-line article {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .artemis-crew-image {
+        min-height: 540px;
+
+        background-size: contain;
+
+        background-position: center;
+    }
+
+
+    .artemis-crew-list div {
+        grid-template-columns: 35px 1fr;
+    }
+
+
+    .artemis-crew-list small {
+        grid-column: 2;
+    }
+
+}
+
+/* =====================================================
+   GALERIA
+===================================================== */
+
+.gallery-hero {
+    min-height: 88vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    padding: 130px 8% 100px;
+
+    background-image: url("../imagens/galeria-nebulosa.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.gallery-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.94),
+            rgba(0, 0, 0, 0.58),
+            rgba(0, 0, 0, 0.15)
+        ),
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.55)
+        );
+}
+
+
+.gallery-hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1000px;
+}
+
+
+.gallery-label {
+    color: #159cff;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 25px;
+}
+
+
+.gallery-hero h1 {
+    max-width: 1000px;
+
+    font-size: clamp(55px, 7vw, 105px);
+
+    line-height: 0.94;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.gallery-hero h1 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.gallery-hero-content > p:not(.gallery-label) {
+    max-width: 650px;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 17px;
+
+    line-height: 1.75;
+
+    margin-bottom: 35px;
+}
+
+
+.gallery-button {
+    display: inline-block;
+
+    padding: 15px 27px;
+
+    border: 1px solid #159cff;
+    border-radius: 30px;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.gallery-button:hover {
+    background: #159cff;
+}
+
+
+
+/* =====================================================
+   FILTROS
+===================================================== */
+
+.gallery-filters {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    padding: 40px 8%;
+
+    background: #050505;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.gallery-filter {
+    padding: 11px 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: transparent;
+
+    color: rgba(255, 255, 255, 0.58);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.gallery-filter:hover,
+.gallery-filter.active {
+    color: white;
+
+    border-color: #159cff;
+
+    background: rgba(21, 156, 255, 0.07);
+}
+
+
+
+/* =====================================================
+   MOSAICO
+===================================================== */
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    grid-auto-rows: 330px;
+
+    gap: 4px;
+
+    padding: 4px;
+
+    background: #030303;
+}
+
+
+.gallery-item {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #080808;
+}
+
+
+.gallery-large {
+    grid-column: span 2;
+
+    grid-row: span 2;
+}
+
+
+.gallery-wide {
+    grid-column: span 2;
+}
+
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+
+.gallery-item::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent 35%,
+            rgba(0, 0, 0, 0.9)
+        );
+
+    transition: 0.3s;
+}
+
+
+.gallery-item:hover img {
+    transform: scale(1.045);
+}
+
+
+.gallery-caption {
+    position: absolute;
+
+    z-index: 2;
+
+    left: 28px;
+    right: 28px;
+    bottom: 25px;
+}
+
+
+.gallery-caption span {
+    display: block;
+
+    color: #159cff;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+}
+
+
+.gallery-caption h3 {
+    font-size: 20px;
+
+    line-height: 1.2;
+
+    margin-bottom: 5px;
+}
+
+
+.gallery-caption p {
+    color: rgba(255, 255, 255, 0.5);
+
+    font-size: 11px;
+}
+
+
+
+/* =====================================================
+   CIÊNCIA
+===================================================== */
+
+.gallery-science {
+    padding: 130px 8%;
+
+    background: #050505;
+}
+
+
+.gallery-section-heading {
+    max-width: 950px;
+}
+
+
+.gallery-section-heading h2 {
+    font-size: clamp(50px, 6vw, 90px);
+
+    line-height: 0.96;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 30px;
+}
+
+
+.gallery-section-heading h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.gallery-section-heading > p:not(.small-label) {
+    max-width: 700px;
+
+    color: rgba(255, 255, 255, 0.67);
+
+    line-height: 1.8;
+}
+
+
+
+/* =====================================================
+   HISTÓRIAS VISUAIS
+===================================================== */
+
+.gallery-story {
+    min-height: 720px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    background: #080808;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+.gallery-story-reverse .gallery-story-image {
+    order: 2;
+}
+
+
+.gallery-story-reverse .gallery-story-content {
+    order: 1;
+}
+
+
+.gallery-story-image {
+    min-height: 700px;
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+}
+
+
+.gallery-pluto {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../imagens/fundo-plutao.jpg");
+}
+
+
+.gallery-cheyava {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../imagens/fundo-cheyava.jpg");
+}
+
+
+.gallery-webb {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("../imagens/galeria-james-webb.jpg");
+}
+
+
+.gallery-story-content {
+    padding: 100px 9%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.gallery-story-content h2 {
+    font-size: clamp(43px, 5vw, 73px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 30px;
+}
+
+
+.gallery-story-content h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.gallery-story-content > p:not(.small-label) {
+    max-width: 600px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+
+.gallery-note {
+    max-width: 560px;
+
+    margin-top: 20px;
+
+    padding: 20px;
+
+    border-left: 2px solid #159cff;
+
+    background: rgba(21, 156, 255, 0.05);
+
+    color: rgba(255, 255, 255, 0.76);
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+
+
+
+/* =====================================================
+   ENCERRAMENTO
+===================================================== */
+
+.gallery-ending {
+    min-height: 700px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 120px 8%;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(21, 156, 255, 0.12),
+            transparent 38%
+        ),
+        #030303;
+}
+
+
+.gallery-ending h2 {
+    max-width: 1050px;
+
+    font-size: clamp(55px, 7vw, 100px);
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 30px;
+}
+
+
+.gallery-ending h2 span {
+    display: block;
+
+    color: #159cff;
+}
+
+
+.gallery-ending > p:not(.small-label) {
+    max-width: 720px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.8;
+}
+
+
+
+/* =====================================================
+   RESPONSIVIDADE - GALERIA
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .gallery-story {
+        grid-template-columns: 1fr;
+    }
+
+
+    .gallery-story-reverse .gallery-story-image,
+    .gallery-story-reverse .gallery-story-content {
+        order: initial;
+    }
+
+
+    .gallery-story-image {
+        min-height: 520px;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .gallery-hero {
+        min-height: 90vh;
+
+        padding: 120px 7% 80px;
+    }
+
+
+    .gallery-hero h1,
+    .gallery-ending h2 {
+        letter-spacing: -3px;
+    }
+
+
+    .gallery-filters {
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        flex-wrap: nowrap;
+
+        padding: 25px 7%;
+    }
+
+
+    .gallery-filter {
+        flex: 0 0 auto;
+    }
+
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+
+        grid-auto-rows: 350px;
+    }
+
+
+    .gallery-large,
+    .gallery-wide {
+        grid-column: span 1;
+
+        grid-row: span 1;
+    }
+
+
+    .gallery-science,
+    .gallery-ending {
+        padding: 90px 7%;
+    }
+
+
+    .gallery-story-image {
+        min-height: 420px;
+    }
+
+
+    .gallery-story-content {
+        padding: 70px 7%;
+    }
+
+}
+
+/* =====================================================
+   MENU MOBILE - HTML + CSS
+===================================================== */
+
+.menu-checkbox {
+    display: none;
+}
+
+
+.menu-button {
+    display: none;
+
+    width: 44px;
+    height: 44px;
+
+    cursor: pointer;
+
+    position: relative;
+
+    z-index: 1002;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+
+.menu-button span {
+    display: block;
+
+    width: 27px;
+    height: 2px;
+
+    background: #ffffff;
+
+    transition: 0.3s;
+}
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .header {
+        height: 105px;
+
+        padding: 0 7%;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+
+        background: rgba(2, 4, 8, 0.97);
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.1);
+
+        z-index: 1000;
+    }
+
+
+    .logo {
+        margin: 0;
+
+        position: relative;
+
+        z-index: 1002;
+
+        font-size: 29px;
+
+        letter-spacing: 8px;
+    }
+
+
+    .logo::after {
+        width: 100%;
+    }
+
+
+    /* MOSTRA O BOTÃO ☰ */
+
+    .menu-button {
+        display: flex;
+    }
+
+
+    /* MENU MOBILE */
+
+    .nav {
+        position: fixed;
+
+        top: 105px;
+        left: 0;
+
+        width: 100%;
+        height: calc(100dvh - 105px);
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        justify-content: flex-start;
+
+        gap: 0;
+
+        padding: 35px 7% 60px;
+
+        margin: 0;
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(3, 6, 12, 0.99),
+                rgba(0, 0, 0, 0.99)
+            );
+
+        transform: translateX(100%);
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transition:
+            transform 0.35s ease,
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+
+        overflow-y: auto;
+
+        z-index: 1001;
+    }
+
+
+    .nav a {
+        width: 100%;
+
+        padding: 20px 5px;
+
+        border-bottom:
+            1px solid rgba(255, 255, 255, 0.1);
+
+        color: rgba(255, 255, 255, 0.75);
+
+        font-size: 20px;
+
+        text-decoration: none;
+    }
+
+
+    .nav a.active {
+        color: #159cff;
+    }
+
+
+    .nav a.active::after {
+        display: none;
+    }
+
+
+    /* ABRE O MENU */
+
+    .menu-checkbox:checked ~ .nav {
+        transform: translateX(0);
+
+        opacity: 1;
+
+        visibility: visible;
+    }
+
+
+    /* TRANSFORMA ☰ EM X */
+
+    .menu-checkbox:checked + .menu-button span:nth-child(1) {
+        transform:
+            translateY(8px)
+            rotate(45deg);
+    }
+
+
+    .menu-checkbox:checked + .menu-button span:nth-child(2) {
+        opacity: 0;
+    }
+
+
+    .menu-checkbox:checked + .menu-button span:nth-child(3) {
+        transform:
+            translateY(-8px)
+            rotate(-45deg);
+    }
+
+}
+
+/* =====================================================
+   TAMANHO DOS TÍTULOS - DESKTOP
+===================================================== */
+
+@media (min-width: 769px) {
+
+    .home-content h1,
+    .nasa-hero h1,
+    .missions-page-hero h1,
+    .rockets-hero h1,
+    .planets-hero h1,
+    .astronaut-hero h1,
+    .gallery-hero h1 {
+        font-size: clamp(48px, 5vw, 78px);
+        line-height: 1;
+    }
+
+}
+
+/* =====================================================
+   AJUSTE DAS IMAGENS DE FUNDO NO CELULAR
+===================================================== */
+
+@media (max-width: 768px) {
+
+    /* NASA */
+    .nasa-hero {
+        background-size: cover;
+        background-position: 62% center;
+    }
+
+    /* PLANETAS */
+    .planets-hero {
+        background-size: cover;
+        background-position: 15% center;
+    }
+
+}
